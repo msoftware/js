@@ -1,0 +1,34 @@
+<html>
+<script src="./turbo.js"></script>
+<script>
+var now = Date.now(),
+	len = 1e6,
+	nFactor = 4,
+	msec,
+	data = new Float32Array(len);
+	
+
+for (var i = 0; i < len; i++) data[i] = i;
+now = Date.now();
+for (var i = 0; i < len; i++) {
+	data[i] *= 4;
+}
+
+msec = Date.now() - now;
+console.log(msec, 'msec', 'js			', data.subarray(0, 5000));
+
+if (turbojs) {
+  var foo = turbojs.alloc(len);
+
+  for (var i = 0; i < len; i++) foo.data[i] = i;
+
+  now = Date.now();
+  turbojs.run(foo, `void main(void) {
+    commit(read() * ${nFactor}.);
+  }`);
+  msec = Date.now() - now;
+  console.log(msec, 'msec', 'turbojs		', foo.data.subarray(0, 5000));
+  
+}
+</script>
+</html>

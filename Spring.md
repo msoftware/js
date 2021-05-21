@@ -1,6 +1,3 @@
-[![index.html](index.html)](https://originalsin.github.io/js/index.html)
-
-
 # [![](https://i.imgur.com/rb8oPur.png)](http://turbo.github.io)
 
 turbo.js is a small library that makes it easier to perform complex calculations that can be done in parallel. The actual calculation performed (the *kernel* executed) uses the GPU for execution. This enables you to work on an array of values all at once.
@@ -11,7 +8,7 @@ turbo.js is compatible with all browsers (even IE when not using ES6 template st
 
 ![](https://i.imgur.com/BiiQSzP.png)
 
-### Example 1
+### Example 1 spring
 
 For this example, which can also be found at the aforementioned website, we are going to perform a simple calculation on a big-ish array of values.
 
@@ -213,5 +210,3 @@ Follow best practices to reduce your algorithm complexity. MDN adds:
 Many C shorthands apply to GLSL. Having said that, this also applies:
 
 > However, nowadays even mobile devices possess powerful GPUs that are capable of running even relatively complex shader programs. Moreover, because shaders are compiled, the eventual machine code that actually runs on the hardware may be highly optimized. What may seem like an expensive function call may in fact compile into only few (or even a single) machine instructions. This is particularly true for GLSL functions that typically operate on vectors, such as `normalize()`, `dot()` and `mix()`. The best advice in that regard is to use the built-in functions, rather than try to implement, for example, one's own version of a dot-product or linear interpolation, which may in fact compile to larger and less optimized machine code. Finally, it is important to keep in mind that GPUs are constructed to do complex mathematical calculations in hardware, and therefore, may support math functions, such as `sin()`, `cos()` and other, through dedicated machine instructions.
-
-![alt text](https://turbo.js.org/images/desktop/mackbook-right-half.png)
